@@ -35,8 +35,14 @@
     - name: deploy dist files in ROOT diretcory
       copy:  src=/home/admin/WebApp/binary/dist dest=/opt/tomcat/apache-tomcat-8.5.51/webapps/ROOT/
 
+    - name: change localhost to ip in main.js file
+      replace:
+           path: /opt/tomcat/apache-tomcat-8.5.51/webapps/ROOT/dist/main.js
+           regexp: 'localhost'
+           replace: '54.166.47.224'
+
     - name: deploy war file in webapps diretcory
-      copy:  src=/home/admin/WebApp/binary/Student.war dest=/opt/tomcat/apache-tomcat-8.5.51/webapps
+      copy:  src=/home/admin/WebApp/binary/Student.war dest=/opt/tomcat/apache-tomcat-8.5.51/webapps/
 
     - name: changge localhost in application.properties file
       replace:
