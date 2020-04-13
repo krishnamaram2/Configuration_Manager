@@ -1,1 +1,9 @@
+[webserver]
+localhost
+
+[appserver]
+localhost
+
 [dbserver]
+localhost
+

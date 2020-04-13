@@ -25,36 +25,35 @@
         url: https://downloads.apache.org/tomcat/tomcat-8/v8.5.54/bin/apache-tomcat-8.5.54.tar.gz
         dest: /opt/tomcat
     - name: Extract Tomcat archive
-      unarchive: src=/opt/tomcat/apache-tomcat-8.5.54.tar.gz dest=/opt/tomcat
+      command: tar zxvf /opt/tomcat/apache-tomcat-8.5.54.tar.gz
 
-    - name: Start Tomcat
-      command: nohup /opt/tomcat/apache-tomcat-8.5.54/bin/startup.sh
-      become: true
-      become_user: root
 
     - name: cloning git repo
       git: repo=https://github.com/krishnamaram2/WebApp.git
            dest=/root/WebApp
 
+    - name: deploy dist files in ROOT diretcory
+      copy:  src=/root/WebApp/binary/dist dest=/opt/tomcat/apache-tomcat-8.5.51/webapps/ROOT/
+
+    - name: change localhost to ip in main.js file
+      replace:
+           path: /opt/tomcat/apache-tomcat-8.5.51/webapps/ROOT/dist/main.js
+           regexp: 'localhost'
+           replace: '18.234.241.83'
 
     - name: deploy war file in webapps diretcory
-      copy:  src=/root/WebApp/binary/Student.war dest=/opt/tomcat/apache-tomcat-8.5.54/webapps/
+      copy:  src=/root/WebApp/binary/Student.war dest=/opt/tomcat/apache-tomcat-8.5.51/webapps/
 
-    - name: Start Tomcat
-      command: nohup /opt/tomcat/apache-tomcat-8.5.54/bin/startup.sh
-      become: true
-      become_user: root
-   
     - name: changge localhost in application.properties file
       replace:
-           path: /opt/tomcat/apache-tomcat-8.5.54/webapps/Student/WEB-INF/classes/application.properties
+           path: /opt/tomcat/apache-tomcat-8.5.51/webapps/Student/WEB-INF/classes/application.properties
            regexp: 'localhost'
            replace: '18.234.241.83'
 
 
     - name: commenting a line in server.xml
       replace:
-           path: /opt/tomcat/apache-tomcat-8.5.54/conf/server.xml
+           path: /opt/tomcat/apache-tomcat-8.5.51/conf/server.xml
            regexp: '<Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs"
                prefix="localhost_access_log" suffix=".txt"
                pattern="%h %l %u %t &quot;%r&quot; %s %b" />'
@@ -64,6 +63,11 @@
 
 
     - name: Start Tomcat
-      command: nohup /opt/tomcat/apache-tomcat-8.5.54/bin/startup.sh
+      command: nohup /opt/tomcat/apache-tomcat-8.5.51/bin/startup.sh
       become: true
-      become_user: root
+      become_user: admin
+    - name: cloning git repo
+      git: repo=https://github.com/krishnamaram2/WebApp.git
+           dest=/root
+    - name: deploy war file
+      copy:  src=/root/WebApp/binary/Student.war dest=/opt/tomcat/apache-tomcat-8.5.51/webapps      
