@@ -8,4 +8,7 @@ localhost
 localhost
 
 [buildserver]
-54.211.196.236
+localhost
+
+[artifactsserver]
+localhost
