@@ -9,11 +9,11 @@
   
   - name: download artifactory  repo
     get_url: 
-       url: https://bintray.com/jfrog/artifactory-rpms/download_file?file_path=jfrog-artifactory-oss-4.13.2.rpm
-       dest: ./jfrog-artifactory-oss-4.13.2.rpm
+       url: https://bintray.com/jfrog/artifactory-rpms/download_file?file_path=jfrog-artifactory-oss-6.6.5.rpm
+       dest: ./jfrog-artifactory-oss-6.6.5.rpm
 
   - name: install rpm package
-    yum: name=./jfrog-artifactory-oss-4.13.2.rpm state=present  
+    yum: name=./jfrog-artifactory-oss-6.6.5.rpm state=present  
 
   - name: start artifactory service and enable on boot
     service: name=artifactory state=started enabled=yes
