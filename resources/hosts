@@ -7,3 +7,5 @@ localhost
 [dbserver]
 localhost
 
+[buildserver]
+54.211.196.236
