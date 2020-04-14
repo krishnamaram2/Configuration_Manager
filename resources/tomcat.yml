@@ -40,16 +40,16 @@
     - name: deploy war file in webapps diretcory
       copy:  src=/root/WebApp/binary/Student.war dest=/opt/tomcat/apache-tomcat-8.5.54/webapps/
 
-    - name: Start Tomcat
-      command: nohup /opt/tomcat/apache-tomcat-8.5.54/bin/startup.sh
-      become: true
-      become_user: root
+#    - name: Start Tomcat
+ #     command: nohup /opt/tomcat/apache-tomcat-8.5.54/bin/startup.sh
+  #    become: true
+   #   become_user: root
    
-    - name: changge localhost in application.properties file
-      replace:
-           path: /opt/tomcat/apache-tomcat-8.5.54/webapps/Student/WEB-INF/classes/application.properties
-           regexp: 'localhost'
-           replace: '18.234.241.83'
+    #- name: changge localhost in application.properties file
+     # replace:
+      #     path: /opt/tomcat/apache-tomcat-8.5.54/webapps/Student/WEB-INF/classes/application.properties
+       #    regexp: 'localhost'
+        #   replace: '54.211.196.236'
 
 
     - name: commenting a line in server.xml
@@ -67,3 +67,9 @@
       command: nohup /opt/tomcat/apache-tomcat-8.5.54/bin/startup.sh
       become: true
       become_user: root
+
+    - name: changge localhost in application.properties file
+      replace:
+           path: /opt/tomcat/apache-tomcat-8.5.54/webapps/Student/WEB-INF/classes/application.properties
+           regexp: 'localhost'
+           replace: '54.211.196.236'

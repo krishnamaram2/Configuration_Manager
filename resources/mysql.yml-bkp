@@ -2,7 +2,7 @@
 -  hosts : dbserver
    become: yes
    vars:
-     mysql_root_password: Root_123
+      root_password: Root_123
    tasks:
      - name: install git
        yum: name=git state=present
@@ -16,6 +16,8 @@
      - name: Install MySQL Server
        yum: name=mysql-server state=present
 
+     - name: Install MySQL-python, this is required for the task remove anonymous user
+       yum: name=MySQL-python state=present
 
      - name: Start MySQL Server and enable it
        service: name=mysqld state=started enabled=yes
@@ -26,25 +28,16 @@
        register: mysql_root_password_temp
        tags: register
 
-
-     - name: Set new password from temporary password
-       shell: 'mysql -e "ALTER USER "root" IDENTIFIED BY "Root_1234";" --connect-expired-password -uroot -p"{{ mysql_root_password_temp.stdout }}"'
-
-
-
-
-
-
 #     - name: Set new password from temporary password
  #      shell: 'mysql -e "SET PASSWORD = PASSWORD(''{{root_password}}'');" --connect-expired-password -uroot -p"{{ mysql_root_password_temp.stdout }}"'
 
 
-    # - name: create mysql user
-     #  mysql_user:
-      #     name: krishna
-       #    password: Krishna_123
-        #   priv: '*.*:ALL'
-         #  state: present
-          # login_user: root
-          # login_password: "{{mysql_root_password_temp}}"
+     - name: create mysql user
+       mysql_user:
+           name: krishna
+           password: Krishna_123
+           priv: '*.*:ALL'
+           state: present
+           login_user: root
+           login_password: "{{mysql_root_password_temp}}"
 

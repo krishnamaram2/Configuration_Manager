@@ -20,6 +20,6 @@
        replace:
            path: /var/www/html/dist/main.js
            regexp: 'localhost'
-           replace: '18.234.241.83'
+           replace: '54.211.196.236'
 
 
