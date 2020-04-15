@@ -12,3 +12,6 @@ localhost
 
 [artifactsserver]
 localhost
+
+[database]
+localhost
