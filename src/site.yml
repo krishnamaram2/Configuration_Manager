@@ -1,5 +1,5 @@
----
-- hosts: all
-  become: yes
+- hosts: dbserver
   roles:
-  - role: dbserver
+    - role: geerlingguy.mysql
+    - role: krishna-mysql
+      become: yes
