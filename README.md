@@ -2,6 +2,29 @@ https://github.com/ansible/ansible-examples/blob/master/language_features/postgr
 http://www.wiivil.com/installing-mysql-on-centos-7-server-using-ansible/
 
 
+---
+-  hosts : dbserver
+   become: yes
+   vars:
+     mysql_root_password: root
+   tasks:
+    - name: create database
+      mysql_db: name=indigo state=present
+
+    - name: create mysql user
+      mysql_user:
+           name: krishna
+           password: Krishna_123
+           priv: '*.*:ALL'
+           state: present
+           login_user: root
+           login_password: "{{mysql_root_password}}"
+    - name: install git
+      yum: name=git state=present
+    - name: clone WebApp repo
+      git: repo=https://github.com/krishnamaram2/WebApp.git dest=/root/WebApp
+    - name: import indigo.sql
+      shell: mysql -u krishna -pKrishna_123 indigo < /root/WebApp/binary/indigo.sql
 
 
 
