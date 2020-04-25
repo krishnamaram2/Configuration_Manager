@@ -4,3 +4,7 @@ localhost
 localhost
 [dbserver]
 localhost
+[buildserver]
+localhost
+[binaryreposerver]
+localhost
