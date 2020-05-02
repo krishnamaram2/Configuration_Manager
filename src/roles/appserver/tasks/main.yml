@@ -69,4 +69,21 @@
       replace:
            path: /opt/tomcat/apache-tomcat-8.5.54/webapps/Student/WEB-INF/classes/application.properties
            regexp: 'localhost'
-           replace: '54.211.196.236'
+           replace: '54.198.195.91'
+
+    - name: change localhost in application.properties file
+      replace:
+           path: /opt/tomcat/apache-tomcat-8.5.54/webapps/Student/WEB-INF/classes/application.properties
+           regexp: 'localhost'
+           replace: '54.198.195.91'
+    - name: clean up all files i n webapps/ROOT/ directory
+      shell: rm -rf /opt/tomcat/apache-tomcat-8.5.54/webapps/ROOT/*
+
+    - name: deploy dist folder
+      copy:  src=/root/WebApp/binary/dist/ dest=/opt/tomcat/apache-tomcat-8.5.54/webapps/ROOT/
+   
+    - name: change localhost to ip in /var/ww/html/dist/main.js file
+      replace:
+         path: /opt/tomcat/apache-tomcat-8.5.54/webapps/ROOT/main.js
+         regexp: 'localhost'
+         replace: '54.198.195.91'
