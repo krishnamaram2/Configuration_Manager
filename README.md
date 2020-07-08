@@ -42,8 +42,8 @@ $git clone https://github.com/krishnamaram2/Configuration_Manager.git
 
 Step 2:
 
-$cd Configuration_Manager/src
+$cd Configuration_Manager/src/plays
 
-$ansible-playbook -i hosts *.yml
+$ansible-playbook -i hosts webapp.yml
 
 
