@@ -1,0 +1,29 @@
+- hosts: localhost
+  roles:
+  - role: webserver
+    become: yes
+
+
+
+
+#---
+#- hosts:
+  #  - all
+  # become: yes
+  #roles:
+  #  - role : webserver
+
+
+
+
+
+
+
+
+
+
+#- hosts: dbserver
+#  roles:
+#    - role: geerlingguy.mysql
+#    - role: krishna-mysql
+#      become: yes
