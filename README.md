@@ -3,29 +3,10 @@ Project Title
 Ansible is used for Software configuration purpose
 
 
-installation 
+ Pre-Requisites
 ===============================
-$yum update -y && yum upgrade -y 
-
-$yum install git -y && yum install wget -y && yum install unzip -y && yum install curl -y
-
-$ yum install epel-release
-
-add repo
-
-vi /etc/yum.repos.d/ansible.repo
-
-[Ansible]
-
-name = ansible
-
-baseurl = https://releases.ansible.com/ansible/rpm/release/epel-7-x86_64/
-
-enabled = 1
-
-gpgcheck = 0
-
-$yum install ansible -y
+$ sh hardening.sh
+reference: https://github.com/krishnamaram2/WebApp
 
 Set up
 =============================
