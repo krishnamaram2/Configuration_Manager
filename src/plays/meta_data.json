@@ -1,5 +1,5 @@
 {
 "meta": {
-"vm_role": "web"
+"server_role": "web"
 }
 }
