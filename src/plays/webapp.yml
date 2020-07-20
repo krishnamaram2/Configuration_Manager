@@ -1,6 +1,6 @@
 - hosts: localhost
   become: yes
-#  vars_files:
+  vars_files:
      - /home/centos/meta_data.json
 #  vars_files:
 #    - "/home/centos/Configuration_Manager/src/plays/meta_data.yml"
