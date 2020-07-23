@@ -3,6 +3,6 @@
   vars_files:
      - /home/centos/meta_data.json
   roles:
-   - {  role: /home/centos/Configuration_Manager/src/roles/webserver, when: meta.server_role == 'cicd' }
-   - {  role: /home/centos/Configuration_Manager/src/roles/appserver, when: meta.server_role == 'binary' }
+   - {  role: /home/centos/Configuration_Manager/src/roles/cicd, when: meta.server_role == 'cicd' }
+   - {  role: /home/centos/Configuration_Manager/src/roles/binary, when: meta.server_role == 'binary' }
 
