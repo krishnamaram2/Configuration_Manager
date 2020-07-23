@@ -1,0 +1,8 @@
+- hosts: localhost
+  become: yes
+  vars_files:
+     - /home/centos/meta_data.json
+  roles:
+   - {  role: /home/centos/Configuration_Manager/src/roles/webserver, when: meta.server_role == 'master' }
+   - {  role: /home/centos/Configuration_Manager/src/roles/appserver, when: meta.server_role == 'worker' }
+
