@@ -44,6 +44,6 @@ Step 2:
 
 $cd Configuration_Manager/src/plays
 
-$ansible-playbook -i hosts webapp.yml
+$ansible-playbook -i hosts webapps.yml
 
 
