@@ -1,17 +1,48 @@
 - hosts: localhost
   become: yes
   vars_files:
-     - /home/centos/meta_data.json
+     - /home/centos/config/meta_data.txt
+  roles:
+   - {  role: /home/centos/Configuration_Manager/src/roles/webserver, when: server_role == 'web' }
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+
+#- hosts: localhost
+#  become: yes
+#  vars_files:
+#     - /home/centos/meta_data.json
 #  vars_files:
 #    - "/home/centos/Configuration_Manager/src/plays/meta_data.yml"
 # vars_files:  /home/centos/Configuration_Manager/src/plays/meta_data.txt
-  roles:
-   - {  role: /home/centos/Configuration_Manager/src/roles/webserver, when: meta.server_role == 'web' }
+#  roles:
+#   - {  role: /home/centos/Configuration_Manager/src/roles/webserver, when: meta.server_role == 'web' }
 #   - {  role: /home/centos/Configuration_Manager/src/roles/appserver, when: vm_role == 'app' }
 #   - { role: /home/centos/Configuration_Manager/src/roles/krishna.mysql, when: server_role == 'db' }
 #    - { role: /home/centos/Configuration_Manager/src/roles/krishna-mysql, when: server_role == 'db' }
 #      become: yes
-
 
 
 
