@@ -1,9 +1,9 @@
 - hosts: localhost
   become: yes
   vars_files:
-     - /home/centos/config/meta_data.txt
+     - /home/centos/config/meta_data.json
   roles:
-   - {  role: /home/centos/Configuration_Manager/src/roles/webserver, when: server_role == 'web' }
+   - {  role: /home/centos/Configuration_Manager/src/roles/webserver, when: meta.server_role == 'web' }
    
    
    
