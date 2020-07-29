@@ -1,2 +1,11 @@
 ---
-# tasks file for k8s_master_worker
+    - name: install git
+      yum: name=git state=present
+
+    - name: install core packages
+      yum: pkg={{ item }} state=latest update_cache=yes
+      with_items:
+          - yum-utils 
+          - device-mapper-persistent-data
+          - lvm2
+

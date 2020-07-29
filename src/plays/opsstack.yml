@@ -1,9 +1,10 @@
 - hosts: localhost
   become: yes
-  vars_files:
-     - /home/centos/meta_data.json
+#  vars_files:
+#     - /home/centos/meta_data.json
   roles:
-   - {  role: /home/centos/Configuration_Manager/src/roles/k8s_master_worker, when: meta.server_role == 'master_and_worker' }
+   - {  role: /home/centos/Configuration_Manager/src/roles/k8s_master_worker}
+#   - {  role: /home/centos/Configuration_Manager/src/roles/k8s_master_worker, when: meta.server_role == 'master_and_worker' }
 
 #  roles:
 #   - {  role: /home/centos/Configuration_Manager/src/roles/k8s_master, when: meta.server_role == 'master' }
