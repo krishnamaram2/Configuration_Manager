@@ -14,9 +14,9 @@
             dest=/home/centos/WebApp
   - name: deploy dist folder
     copy:  src=/home/centos/WebApp/binary/dist dest=/var/www/html/
-  #- name: change localhost to ip in /var/ww/html/dist/main.js file
-  #  replace:
-  #       path: /var/www/html/dist/main.js
-  #       regexp: 'localhost'
-  #       replace: '54.198.195.91'
+  - name: change localhost to ip in /var/ww/html/dist/main.js file
+    replace:
+       path: /var/www/html/dist/main.js
+       regexp: 'localhost'
+       replace: '100.27.12.204'
 
