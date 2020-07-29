@@ -8,3 +8,5 @@ localhost
 localhost
 [binaryreposerver]
 localhost
+[k8s_master_worker]
+localhost
