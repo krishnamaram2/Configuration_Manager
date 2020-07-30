@@ -44,6 +44,12 @@
           name: docker
           state: restarted
 
+    - name: enabled service docker, in all cases
+      service:
+          name: docker
+          enabled: yes
+
+
     - name: Copy file with owner and permissions
       copy:
           src: /home/centos/Configuration_Manager/src/kubernetes.repo
@@ -56,6 +62,14 @@
           - kubeadm
           - kubectl
           - kubelet
+
+    - name: Restart service kubelet, in all cases
+      service:
+          name: kubelet
+          enabled: yes
+
+    - name: do echo
+      shell: echo 1 >  /proc/sys/net/bridge/bridge-nf-call-iptables
 
     - name: initialize the cluster
       shell: kubeadm init
@@ -74,3 +88,6 @@
 
     - name: install Pod network
       shell: kubectl apply -f  /home/centos/Configuration_Manager/src/weavenet.yml
+
+    - name: untaint
+      shell: kubectl taint nodes --all node-role.kubernetes.io/master-
