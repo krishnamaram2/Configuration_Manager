@@ -1,8 +1,10 @@
 - hosts: localhost
   become: yes
-  vars_files:
-     - /home/centos/meta_data.json
+#  vars_files:
+#     - /home/centos/meta_data.json
   roles:
-   - {  role: /home/centos/Configuration_Manager/src/roles/cicd, when: meta.server_role == 'cicd' }
-   - {  role: /home/centos/Configuration_Manager/src/roles/binary, when: meta.server_role == 'binary' }
+   - {  role: /root/Configuration_Manager/src/roles/cicd }
+   - {  role: /root/Configuration_Manager/src/roles/binary }
+#   - {  role: /home/centos/Configuration_Manager/src/roles/binary, when: meta.server_role == 'binary' }
+#   - {  role: /home/centos/Configuration_Manager/src/roles/binary, when: meta.server_role == 'binary' }
 
