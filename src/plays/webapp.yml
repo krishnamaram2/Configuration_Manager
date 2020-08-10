@@ -5,9 +5,9 @@
 
   roles:
    - {  role: /root/Configuration_Manager/src/roles/webserver, when: meta.server_role == 'web' }
-   - {  role: /root/Configuration_Manager/src/roles/appserver, when: meta.server_role == 'web' }
-   - {  role: /root/Configuration_Manager/src/roles/krishna.mysql, when: meta.server_role == 'web' }
-   - {  role: /root/Configuration_Manager/src/roles/krishna-mysql, when: meta.server_role == 'web' }
+ #  - {  role: /root/Configuration_Manager/src/roles/appserver, when: meta.server_role == 'web' }
+ #  - {  role: /root/Configuration_Manager/src/roles/krishna.mysql, when: meta.server_role == 'web' }
+ #  - {  role: /root/Configuration_Manager/src/roles/krishna-mysql, when: meta.server_role == 'web' }
    
    
    
