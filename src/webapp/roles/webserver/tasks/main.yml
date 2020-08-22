@@ -10,10 +10,10 @@
         name: httpd
         state: started
   - name: cloning git repo
-    git: repo=https://github.com/krishnamaram2/WebApp.git
-            dest=/home/centos/WebApp
+    git: repo=https://github.com/krishnamaram2/binary-code.git
+            dest=~/binary-code
   - name: deploy dist folder
-    copy:  src=/home/centos/WebApp/binary/dist dest=/var/www/html/
+    copy:  src=~/binary-code/binaries/dist dest=/var/www/html/
   - name: change localhost to ip in /var/ww/html/dist/main.js file
     replace:
        path: /var/www/html/dist/main.js
