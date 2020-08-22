@@ -42,9 +42,9 @@ $git clone https://github.com/krishnamaram2/Configuration_Manager.git
 
 Step 2:
 
-$cd Configuration_Manager/src/plays
+$cd Configuration_Manager/src/webapp
 
-$ansible-playbook -i hosts webapps.yml
+$ansible-playbook -i hosts plays/webapp.yml
 
 
 
@@ -70,10 +70,6 @@ $git clone https://github.com/krishnamaram2/Configuration_Manager.git
 
 Step 2:
 
-$cd Configuration_Manager/src/plays
+$cd Configuration_Manager/src/webapp
 
-$ansible-playbook -i hosts opsstack.yml
-
-$ansible-playbook -i hosts devstack.yml
-
-$ansible-playbook -i hosts webapp.yml
+$ansible-playbook -i hosts plays/webapp.yml
