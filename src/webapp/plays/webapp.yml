@@ -4,10 +4,10 @@
   #   - Configuration_Manager/src/plays/meta_data.json
 
   roles:
-   - {  role: /root/Configuration_Manager/src/webapp/roles/webserver}
- #  - {  role: /root/Configuration_Manager/src/webapp/roles/appserver}
- #  - {  role: /root/Configuration_Manager/src/webapp/roles/krishna.mysql}
- #  - {  role: /root/Configuration_Manager/src/webapp/roles/krishna-mysql}
+   - {  role: ~/configuration-manager/src/webapp/roles/webserver}
+ #  - {  role: ~/configuration-manager/src/webapp/roles/appserver}
+ #  - {  role: ~/configuration-manager/src/webapp/roles/krishna.mysql}
+ #  - {  role: ~/configuration-manager/src/webapp/roles/krishna-mysql}
    
    
    
