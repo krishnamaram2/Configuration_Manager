@@ -38,11 +38,11 @@ Execution Flow
 
 step 1: clone repo
 
-$git clone https://github.com/krishnamaram2/Configuration_Manager.git
+$git clone https://github.com/krishnamaram2/configuration-manager.git
 
 Step 2:
 
-$cd Configuration_Manager/src/webapp
+$cd configuration_manager/src/webapp
 
 $ansible-playbook -i hosts plays/webapp.yml
 
@@ -66,10 +66,10 @@ Step 0: add public keys
 
 step 1: clone repo
 
-$git clone https://github.com/krishnamaram2/Configuration_Manager.git
+$git clone https://github.com/krishnamaram2/configuration-manager.git
 
 Step 2:
 
-$cd Configuration_Manager/src/webapp
+$cd configuration-manager/src/webapp
 
 $ansible-playbook -i hosts plays/webapp.yml
