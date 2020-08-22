@@ -1,12 +1,13 @@
 - hosts: localhost
   become: yes
-  vars_files:
-     - /root/Configuration_Manager/src/plays/meta_data.json
+  #vars_files:
+  #   - Configuration_Manager/src/plays/meta_data.json
 
   roles:
-   - {  role: /root/Configuration_Manager/src/webapp/roles/webserver, when: meta.server_role == 'web' }
- #  - {  role: /root/Configuration_Manager/src/webapp/roles/krishna.mysql, when: meta.server_role == 'app' }
- #  - {  role: /root/Configuration_Manager/src/webapp/roles/krishna-mysql, when: meta.server_role == 'db' }
+   - {  role: /root/Configuration_Manager/src/webapp/roles/webserver}
+ #  - {  role: /root/Configuration_Manager/src/webapp/roles/appserver}
+ #  - {  role: /root/Configuration_Manager/src/webapp/roles/krishna.mysql}
+ #  - {  role: /root/Configuration_Manager/src/webapp/roles/krishna-mysql}
    
    
    
