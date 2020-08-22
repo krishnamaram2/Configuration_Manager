@@ -1,8 +1,5 @@
 ---
 # tasks file for webserver
-  - name: install git
-    yum: name=git state=present
-
   - name: install http server
     yum: name=httpd state=latest
   - name: restart http server
