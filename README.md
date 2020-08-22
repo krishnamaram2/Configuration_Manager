@@ -5,53 +5,24 @@ Ansible is used for Software configuration purpose
 
  Pre-Requisites
 ===============================
-$ sh hardening.sh
-reference: https://github.com/krishnamaram2/WebApp
 
-Set up
-=============================
+step 1: enable password authentication
 
-Step 1: switch to root user
+$vi /etc/ssh/sshd_config
 
-sudo su -l
+   PasswordAuthentication yes
 
-passwd root
+   permitroorlogin yes
 
-step 2: enable password authentication
+$systemctl restart sshd
 
-vi /etc/ssh/sshd_config
-
-PasswordAuthentication yes
-
-permitroorlogin yes
-
-systemctl restart sshd
-
-step 3: generate ssh keys for key based authentication
+step 2: generate ssh keys for key based authentication
 
 ssh-keygen
 
-ssh-copy-id root@localhost
+Step 3: add ssh keys 
 
-Execution Flow
-======================
-
-step 1: clone repo
-
-$git clone https://github.com/krishnamaram2/configuration-manager.git
-
-Step 2:
-
-$cd configuration_manager/src/webapp
-
-$ansible-playbook -i hosts plays/webapp.yml
-
-
-
-
-
-
-
+ssh-copy-id centos@localhost
 
 Step 0: add public keys
 
@@ -64,12 +35,18 @@ Step 0: add public keys
  ssh -o StrictHostKeyChecking=no centos@localhost
 
 
+Execution Flow
+======================
+
 step 1: clone repo
 
 $git clone https://github.com/krishnamaram2/configuration-manager.git
 
-Step 2:
+Step 2: run playbooks
 
 $cd configuration-manager/src/webapp
 
 $ansible-playbook -i hosts plays/webapp.yml
+
+
+
