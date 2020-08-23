@@ -48,12 +48,15 @@ $git clone https://github.com/krishnamaram2/configuration-manager.git
 Step 2: run playbooks
 
 $cd configuration-manager/src/webapp
+
 $ansible-playbook -i hosts plays/webapp.yml
 
 $cd configuration-manager/src/devstack
+
 $ansible-playbook -i hosts plays/devstack.yml
 
 $cd configuration-manager/src/opstack
+
 $ansible-playbook -i hosts plays/opstsack.yml
 
 
