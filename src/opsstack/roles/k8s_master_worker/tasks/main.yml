@@ -52,7 +52,7 @@
 
     - name: Copy file with owner and permissions
       copy:
-          src: /home/centos/Configuration_Manager/src/kubernetes.repo
+          src: /home/centos/configuration-manager/src/opsstack/kubernetes.repo
           dest: /etc/yum.repos.d/kubernetes.repo
 
 
@@ -87,7 +87,7 @@
         remote_src: yes
 
     - name: install Pod network
-      shell: kubectl apply -f  /home/centos/Configuration_Manager/src/weavenet.yml
+      shell: kubectl apply -f  /home/centos/configuration-manager/src/opsstack/weavenet.yml
 
     - name: untaint
       shell: kubectl taint nodes --all node-role.kubernetes.io/master-

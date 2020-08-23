@@ -5,26 +5,29 @@ Ansible is used for Software configuration purpose
 
  Pre-Requisites
 ===============================
+Case 1: manual 
 
-step 1: enable password authentication
+step 1: switch to root user
+$passwd centos
+
+Step 2: enable password authentication
 
 $vi /etc/ssh/sshd_config
 
    PasswordAuthentication yes
 
-   permitroorlogin yes
+optional :   permitroorlogin yes
 
 $systemctl restart sshd
 
-step 2: generate ssh keys for key based authentication
+step 3: generate ssh keys for password based authentication and ad ssh keys
 
-ssh-keygen
+$ssh-keygen
 
-Step 3: add ssh keys 
+$ssh-copy-id centos@localhost
 
-ssh-copy-id centos@localhost
 
-Step 0: add public keys
+Case 2: automation
 
  #!/bin/bash
  
@@ -45,8 +48,13 @@ $git clone https://github.com/krishnamaram2/configuration-manager.git
 Step 2: run playbooks
 
 $cd configuration-manager/src/webapp
-
 $ansible-playbook -i hosts plays/webapp.yml
+
+$cd configuration-manager/src/devstack
+$ansible-playbook -i hosts plays/devstack.yml
+
+$cd configuration-manager/src/opstack
+$ansible-playbook -i hosts plays/opstsack.yml
 
 
 
