@@ -8,6 +8,7 @@ Ansible is used for Software configuration purpose
 Case 1: manual 
 
 step 1: switch to root user
+
 $passwd centos
 
 Step 2: enable password authentication
@@ -55,9 +56,9 @@ $cd configuration-manager/src/devstack
 
 $ansible-playbook -i hosts plays/devstack.yml
 
-$cd configuration-manager/src/opstack
+$cd configuration-manager/src/opsstack
 
-$ansible-playbook -i hosts plays/opstsack.yml
+$ansible-playbook -i hosts plays/opsstack.yml
 
 
 
