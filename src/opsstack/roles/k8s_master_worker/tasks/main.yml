@@ -85,6 +85,15 @@
        # src: /etc/kubernetes/admin.conf
         #dest: $HOME/.kube/config
         #remote_src: yes
+
+    - name: permissions for /home/centos/configuration-manager/src/opsstack/users.sh
+      file:
+        path: /home/centos/configuration-manager/src/opsstack/users.sh
+        owner: centos
+        group: centos
+        mode: '0755'
+
+
     - name: run shell script for user centos
       script: /home/centos/configuration-manager/src/opsstack/users.sh
 
