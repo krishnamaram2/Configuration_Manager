@@ -45,6 +45,8 @@
       become: true
       become_user: root
    
+    - name: change ownership 
+      file: path=/opt/tomcat/apache-tomcat-8.5.56/webapps/ state=directory recurse=yes owner=centos group=centos mode=0666
     - name: commenting a line in server.xml
       replace:
            path: /opt/tomcat/apache-tomcat-8.5.56/conf/server.xml
@@ -60,7 +62,7 @@
       replace:
           path: /opt/tomcat/apache-tomcat-8.5.56/webapps/Student/WEB-INF/classes/application.properties
           regexp: 'localhost'
-          replace: '34.231.110.40'
+          replace: '3.223.3.165'
 
 
     - name: Start Tomcat
