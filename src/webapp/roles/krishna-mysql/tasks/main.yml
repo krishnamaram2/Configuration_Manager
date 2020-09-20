@@ -7,7 +7,7 @@
            name: krishna
            password: Krishna_123
            priv: '*.*:ALL'
-           host_all: yes
+           #host_all: yes
            state: present
            login_user: root
            login_password: "{{mysql_root_password}}"
