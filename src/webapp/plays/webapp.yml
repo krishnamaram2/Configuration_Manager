@@ -5,10 +5,10 @@
 
   roles:
 #    - {  role: ~/configuration-manager/src/webapp/roles/webserver}
-      - {  role: ~/configuration-manager/src/webapp/roles/webappserver}
+ #     - {  role: ~/configuration-manager/src/webapp/roles/webappserver}
 #    - {  role: ~/configuration-manager/src/webapp/roles/appserver}
- #     - {  role: ~/configuration-manager/src/webapp/roles/krishna.mysql}
- #     - {  role: ~/configuration-manager/src/webapp/roles/krishna-mysql}
+      - {  role: ~/configuration-manager/src/webapp/roles/krishna.mysql}
+      - {  role: ~/configuration-manager/src/webapp/roles/krishna-mysql}
    
    
    
