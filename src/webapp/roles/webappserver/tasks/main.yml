@@ -87,4 +87,4 @@
       replace:
          path: /opt/tomcat/apache-tomcat-8.5.57/webapps/ROOT/main.js
          regexp: 'localhost'
-         replace: '184.73.203.204'
+         replace: '54.146.190.87'
