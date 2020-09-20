@@ -70,13 +70,13 @@
       replace:
            path: /opt/tomcat/apache-tomcat-8.5.57/webapps/Student/WEB-INF/classes/application.properties
            regexp: 'localhost'
-           replace: '52.86.184.152'
+           replace: '192.168.1.7'
 
     - name: change localhost in application.properties file
       replace:
            path: /opt/tomcat/apache-tomcat-8.5.57/webapps/Student/WEB-INF/classes/application.properties
            regexp: 'localhost'
-           replace: '52.86.184.152'
+           replace: '192.168.1.7'
     - name: clean up all files i n webapps/ROOT/ directory
       shell: rm -rf /opt/tomcat/apache-tomcat-8.5.57/webapps/ROOT/*
 
@@ -87,4 +87,4 @@
       replace:
          path: /opt/tomcat/apache-tomcat-8.5.57/webapps/ROOT/main.js
          regexp: 'localhost'
-         replace: '52.86.184.152'
+         replace: '184.73.203.204'
