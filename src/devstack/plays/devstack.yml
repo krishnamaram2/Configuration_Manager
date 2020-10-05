@@ -3,4 +3,5 @@
   roles:
    - {  role: /home/centos/configuration-manager/src/devstack/roles/cicd }
    - {  role: /home/centos/configuration-manager/src/devstack/roles/binary }
+   - {  role: /home/centos/configuration-manager/src/devstack/roles/appserver }
 
