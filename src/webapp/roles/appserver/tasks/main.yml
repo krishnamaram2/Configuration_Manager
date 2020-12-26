@@ -17,15 +17,15 @@
       
     - name: Download foo.conf
       get_url:
-        url: https://downloads.apache.org/tomcat/tomcat-8/v8.5.56/bin/apache-tomcat-8.5.56.tar.gz
+        url: https://downloads.apache.org/tomcat/tomcat-8/v8.5.61/bin/apache-tomcat-8.5.61.tar.gz
         dest: /opt/tomcat
    
    
     - name: Extract Tomcat archive
-      unarchive: src=/opt/tomcat/apache-tomcat-8.5.56.tar.gz dest=/opt/tomcat remote_src=yes
+      unarchive: src=/opt/tomcat/apache-tomcat-8.5.61.tar.gz dest=/opt/tomcat remote_src=yes
 
     - name: change ownership 
-      file: path=/opt/tomcat/apache-tomcat-8.5.56 state=directory recurse=yes owner=centos group=centos mode=0755
+      file: path=/opt/tomcat/apache-tomcat-8.5.61 state=directory recurse=yes owner=centos group=centos mode=0755
  
 
     - name: cloning git repo
@@ -33,23 +33,23 @@
            dest=/home/centos/binary-code
 
     - name: Stop Tomcat
-      command: nohup /opt/tomcat/apache-tomcat-8.5.56/bin/shutdown.sh
+      command: nohup /opt/tomcat/apache-tomcat-8.5.61/bin/shutdown.sh
       become: true
       become_user: root
 
     - name: deploy war file in webapps diretcory
-      copy:  src=/home/centos/binary-code/binaries/Student.war dest=/opt/tomcat/apache-tomcat-8.5.56/webapps/
+      copy:  src=/home/centos/binary-code/binaries/Student.war dest=/opt/tomcat/apache-tomcat-8.5.61/webapps/
 
     - name: Start Tomcat
-      command: nohup /opt/tomcat/apache-tomcat-8.5.56/bin/startup.sh
+      command: nohup /opt/tomcat/apache-tomcat-8.5.61/bin/startup.sh
       become: true
       become_user: root
    
     - name: change ownership 
-      file: path=/opt/tomcat/apache-tomcat-8.5.56/webapps/ state=directory recurse=yes owner=centos group=centos mode=0666
+      file: path=/opt/tomcat/apache-tomcat-8.5.61/webapps/ state=directory recurse=yes owner=centos group=centos mode=0666
     - name: commenting a line in server.xml
       replace:
-           path: /opt/tomcat/apache-tomcat-8.5.56/conf/server.xml
+           path: /opt/tomcat/apache-tomcat-8.5.61/conf/server.xml
            regexp: '<Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs"
                prefix="localhost_access_log" suffix=".txt"
                pattern="%h %l %u %t &quot;%r&quot; %s %b" />'
@@ -60,12 +60,12 @@
 
     - name: changge localhost in application.properties file
       replace:
-          path: /opt/tomcat/apache-tomcat-8.5.56/webapps/Student/WEB-INF/classes/application.properties
+          path: /opt/tomcat/apache-tomcat-8.5.61/webapps/Student/WEB-INF/classes/application.properties
           regexp: 'localhost'
           replace: '34.231.57.92'
 
 
     - name: Start Tomcat
-      command: nohup /opt/tomcat/apache-tomcat-8.5.56/bin/startup.sh
+      command: nohup /opt/tomcat/apache-tomcat-8.5.61/bin/startup.sh
       become: true
       become_user: root
