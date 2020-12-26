@@ -62,7 +62,7 @@
       replace:
           path: /opt/tomcat/apache-tomcat-8.5.56/webapps/Student/WEB-INF/classes/application.properties
           regexp: 'localhost'
-          replace: '3.223.3.165'
+          replace: '34.231.57.92'
 
 
     - name: Start Tomcat
