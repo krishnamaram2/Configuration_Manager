@@ -1,6 +1,6 @@
 ---  
   - name: create database
-    mysql_db: name=indigo state=present
+    mysql_db: name=cloudstones state=present
 
   - name: create mysql user
     mysql_user:
@@ -16,7 +16,7 @@
     git: repo=https://github.com/krishnamaram2/binary-code.git dest=/home/centos/binary-code
 
   - name: import indigo.sql
-    shell: mysql -u krishna -pKrishna_123 indigo < /home/centos/binary-code/binaries/indigo.sql
+    shell: mysql -u krishna -pKrishna_123 cloudstones < /home/centos/binary-code/binaries/cloudstones.sql
 
 
 
