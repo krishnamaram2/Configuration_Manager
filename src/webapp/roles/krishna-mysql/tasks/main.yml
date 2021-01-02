@@ -4,8 +4,8 @@
 
   - name: create mysql user
     mysql_user:
-           name: krishna
-           password: Krishna_123
+           name: cloud
+           password: Cloud_123
            priv: '*.*:ALL'
            #host_all: yes
            state: present
